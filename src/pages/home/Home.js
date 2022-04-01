@@ -21,10 +21,21 @@ const Home = () => {
       {articles.map((article) => (
         <div key={article.uri}>
           <h1>{article.title}</h1>
+          <p>{article.created_date}</p>
+          <p>{article.byline}</p>
+          <p>{article.abstract}</p>
           {article.multimedia === null ? (
-            <img src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg" />
+            <img
+              src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
+              alt=""
+            />
           ) : (
-            <img src={article.multimedia[2].url} width="150px" height="150px" />
+            <img
+              src={article.multimedia[2].url}
+              width="150px"
+              height="150px"
+              alt=""
+            />
           )}
         </div>
       ))}
