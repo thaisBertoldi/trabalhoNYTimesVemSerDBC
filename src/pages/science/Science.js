@@ -26,6 +26,7 @@ const Science = () => {
           <h1>{el.title}</h1>
           <small>{el.published_date}</small>
           <p>{el.byline}</p>
+          <p>{el.abstract}</p>
           {el.multimedia === null ? (
             <img
               src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
