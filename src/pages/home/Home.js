@@ -1,9 +1,35 @@
+import { useEffect, useState } from "react";
+import Api from "../../Api";
+
 const Home = () => {
-  return(
+  const [articles, setArticles] = useState([]);
+
+  const getSection = async () => {
+    const { data } = await Api.get(
+      "/home.json?api-key=k0YgedAIFDuVd5qUgwTlLhp4Z56aTnGd"
+    );
+    const { results } = data;
+    setArticles(results);
+  };
+
+  useEffect(() => {
+    getSection();
+  }, []);
+
+  return (
     <>
-      <h1>Home</h1>
+      {articles.map((article) => (
+        <div key={article.uri}>
+          <h1>{article.title}</h1>
+          {article.multimedia === null ? (
+            <img src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg" />
+          ) : (
+            <img src={article.multimedia[2].url} width="150px" height="150px" />
+          )}
+        </div>
+      ))}
     </>
   );
-}
+};
 
 export default Home;
