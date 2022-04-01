@@ -9,10 +9,18 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/science' element={<Science/>}></Route>
-          <Route path='/health' element={<Health />}></Route>
-          <Route path='/politics' element={<Politics/>}></Route>
+          <Route path='/' element={<Home />}>
+            <Route path=':id' element={<Home />} />
+          </Route>
+          <Route path='/science' element={<Science/>}>
+            <Route path=':id' element={<Science />} />
+          </Route>
+          <Route path='/health' element={<Health />}>
+            <Route path=':id' element={<Health />} />
+          </Route>
+          <Route path='/politics' element={<Politics/>}>
+            <Route path=':id' element={<Politics />} />
+          </Route>
         </Routes> 
       </BrowserRouter>
     </div>
