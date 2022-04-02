@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
+import World from "./pages/world/World";
 import Politics from "./pages/politics/Politics";
 import Science from "./pages/science/Science";
 import Health from "./pages/health/Health";
@@ -17,9 +18,10 @@ function App() {
         <DetailsProvider>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/world" element={<World />} />
+            <Route path="/politics" element={<Politics />} />
             <Route path="/science" element={<Science />} />
             <Route path="/health" element={<Health />} />
-            <Route path="/politics" element={<Politics />} />
             <Route path="/details" element={<Details />}>
               <Route path=":id" element={<Details />} />
             </Route>

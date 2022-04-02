@@ -10,7 +10,7 @@ const World = () => {
 
   const getArticlesData = async () => {
     const { data } = await Api.get(
-      "/technology.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
+      "/world.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
     );
     const { results } = data;
 
@@ -23,7 +23,7 @@ const World = () => {
 
   return (
     <div className="container">
-      <h1>Technology</h1>
+      <h1>World</h1>
       {articles.map((el) => (
         <Link
           key={el.uri}

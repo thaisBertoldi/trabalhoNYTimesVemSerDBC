@@ -8,7 +8,7 @@ const Home = () => {
   const [articles, setArticles] = useState([]);
   const { setDetailArticle } = useContext(DetailsContext);
 
-  const getSection = async () => {
+  const getArticlesData = async () => {
     const { data } = await Api.get(
       "/home.json?api-key=k0YgedAIFDuVd5qUgwTlLhp4Z56aTnGd"
     );
@@ -17,34 +17,34 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getSection();
+    getArticlesData();
   }, []);
 
   return (
     <div className="container">
-      {articles.map((article) => (
+      {articles.map((el) => (
         <Link
-          key={article.uri}
-          to={`/details/${article.uri.split("/")[3]}`}
+          key={el.uri}
+          to={`/details/${el.uri.split("/")[3]}`}
           onClick={() => {
-            setDetailArticle(article);
+            setDetailArticle(el);
           }}
           className="content"
         >
           <div>
-            <h1>{article.title}</h1>
-            <small>{moment(article.published_date).format("DD/MM/YYYY")}</small>
-            <p>{article.byline}</p>
-            <p>{article.abstract}</p>
+            <h1>{el.title}</h1>
+            <small>{moment(el.published_date).format("DD/MM/YYYY")}</small>
+            <p>{el.byline}</p>
+            <p>{el.abstract}</p>
           </div>
           <div>
-            {article.multimedia === null ? (
+            {el.multimedia === null ? (
               <img
                 src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
                 alt=""
               />
             ) : (
-              <img src={article.multimedia[1].url} width="350px" alt="" />
+              <img src={el.multimedia[1].url} width="350px" alt="" />
             )}
           </div>
         </Link>
