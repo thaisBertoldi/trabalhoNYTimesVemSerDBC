@@ -1,10 +1,12 @@
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { DetailsContext } from "../../contexts/DetailsContext";
 import Api from "../../Api";
 
 const Health = () => {
   const [articles, setArticles] = useState([]);
+  const { setDetailArticle } = useContext(DetailsContext);
 
   useEffect(() => {
     returnHealthData();
@@ -28,7 +30,7 @@ const Health = () => {
           <Link
             to={`/details${el.uri.split("nyt://article").join("")}`}
             className="container"
-            onClick={() => {console.log('oi joao')}}
+            onClick={() => {setDetailArticle(el)}}
           >
             <div>
               <h1>{el.title}</h1>
