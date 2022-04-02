@@ -7,7 +7,9 @@ export default function Footer() {
       <div className={styles.footerMessage}>
         <div>
           <div>
-            <h1 className={styles.fontTitleNY}>The Nelson's &amp; Thais's Times</h1>
+            <h1 className={styles.fontTitleNY}>
+              The Nelson's &amp; Thais's Times
+            </h1>
             <span>
               We believe that great journalism has the power to make each
               reader's life richer and more fulfilling, and all of society
