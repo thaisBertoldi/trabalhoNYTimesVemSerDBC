@@ -5,6 +5,7 @@ import Science from "./pages/science/Science";
 import Health from "./pages/health/Health";
 import Details from "./pages/details/Details";
 import DetailsProvider from "./contexts/DetailsContext";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </Route>
           </Routes>
         </DetailsProvider>
+        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -1,0 +1,26 @@
+@import url('http://fonts.cdnfonts.com/css/ds-fette-kanzlei');
+
+.footerContainer{
+    background-color: rgba(0, 0, 0, 0.822);
+}
+
+.footerMessage{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin: 30px;
+    color: rgba(255, 255, 255, 0.877);
+}
+
+.fontTitleNY{
+    font-family: 'DS Fette Kanzlei', sans-serif;
+    color: rgba(255, 255, 255, 0.877);
+}
+
+.footerCopyright{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    border-top: 1px rgba(255, 255, 255, 0.301) solid;
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.877);
+}
