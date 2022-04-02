@@ -2,13 +2,14 @@
 
 .footerContainer{
     background-color: rgba(0, 0, 0, 0.822);
+    padding: 30px
 }
 
 .footerMessage{
     display: grid;
     grid-template-columns: 60% 40%;
-    margin: 30px;
     color: rgba(255, 255, 255, 0.877);
+    padding-bottom: 30px;
 }
 
 .fontTitleNY{
