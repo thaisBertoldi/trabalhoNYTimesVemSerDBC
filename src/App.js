@@ -13,6 +13,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Header />
+        <div className="main">
         <DetailsProvider>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -24,6 +25,7 @@ function App() {
             </Route>
           </Routes>
         </DetailsProvider>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>
