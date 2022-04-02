@@ -1,13 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { DetailsContext } from "../../contexts/DetailsContext";
 
 const Details = () => {
-  const params = useParams();
+  const { detailArticle } = useContext(DetailsContext);
 
-  return(
+  return (
     <>
-      {console.log(params.id)}
+      <h1>{detailArticle.title}</h1>
     </>
   );
-}
+};
 
 export default Details;
