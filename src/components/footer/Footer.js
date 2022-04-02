@@ -10,7 +10,7 @@ export default function Footer() {
             <h1 className={styles.fontTitleNY}>The Nelson's & Thais's Jornal</h1>
             <span>
               We believe that great journalism has the power to make each
-              reader’s life richer and more fulfilling, and all of society
+              reader's life richer and more fulfilling, and all of society
               stronger and more just.
             </span>
           </div>

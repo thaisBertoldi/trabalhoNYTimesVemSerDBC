@@ -27,7 +27,7 @@ const Politics = () => {
       {articles.map((el) => (
         <div key={el.uri}>
           <Link
-            to={`/politics:${el.uri.split("nyt://article/").join("")}`}
+            to={`/details/${el.uri.split("/")[3]}`}
             className="container"
           >
             <div>

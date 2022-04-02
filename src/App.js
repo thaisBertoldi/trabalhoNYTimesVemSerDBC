@@ -7,13 +7,13 @@ import Details from "./pages/details/Details";
 import DetailsProvider from "./contexts/DetailsContext";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <Header />
-        <div className="main">
         <DetailsProvider>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -25,7 +25,6 @@ function App() {
             </Route>
           </Routes>
         </DetailsProvider>
-        </div>
         <Footer />
       </BrowserRouter>
     </div>
