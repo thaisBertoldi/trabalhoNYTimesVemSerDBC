@@ -4,10 +4,14 @@ import "./Details.css";
 import { DetailsContext } from "../../contexts/DetailsContext";
 import Api from "../../Api";
 import { Link } from "react-router-dom";
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
 
 const Details = () => {
   const { detailArticle, setDetailArticle } = useContext(DetailsContext);
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [erro, setErro] = useState(false);
 
   const getArticlesData = async () => {
     try {
@@ -16,14 +20,25 @@ const Details = () => {
       );
       const { results } = data;
       setArticles(results);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
+      setErro(true);
     }
   };
 
   useEffect(() => {
     getArticlesData();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (erro) {
+    return <Error />;
+  }
 
   return (
     <div className="container">
@@ -114,7 +129,9 @@ const Details = () => {
         </div>
       </div>
 
-      <div className="detailsOtherNewsTitle"><h3>Other News:</h3></div>
+      <div className="detailsOtherNewsTitle">
+        <h3>Other News:</h3>
+      </div>
       <div className="detailsMoreNews">
         {articles.map((el) => (
           <Link
