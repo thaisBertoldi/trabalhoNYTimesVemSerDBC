@@ -26,8 +26,9 @@ const Health = () => {
       {articles.map((el) => (
         <div key={el.uri}>
           <Link
-            to={`/health:${el.uri.split("nyt://article/").join("")}`}
+            to={`/details${el.uri.split("nyt://article").join("")}`}
             className="container"
+            onClick={() => {console.log('oi joao')}}
           >
             <div>
               <h1>{el.title}</h1>

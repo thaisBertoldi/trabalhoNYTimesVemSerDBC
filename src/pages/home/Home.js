@@ -22,7 +22,10 @@ const Home = () => {
     <>
       {articles.map((article) => (
         <div key={article.uri} >
-          <Link to={`/`} className='container'>
+          <Link
+            to={`/details:${article.uri.split("nyt://article").join("")}`}
+            className="container"
+          >
             <div>
               <h1>{article.title}</h1>
               <small>{moment(article.published_date).format('DD/MM/YYYY')}</small>
