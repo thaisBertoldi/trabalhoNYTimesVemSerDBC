@@ -18,7 +18,7 @@ export default function Footer() {
       </div>
       <div>
         <small className={styles.footerCopyright}>
-          ©{new Date().getFullYear()} The Nelson's &amp; Thais's Jornal Times
+          ©{new Date().getFullYear()} The Nelson's &amp; Thais's Times Company
         </small>
       </div>
     </div>
