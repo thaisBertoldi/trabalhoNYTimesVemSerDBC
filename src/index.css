@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -23,7 +24,7 @@ a {
 
 .container {
   flex-grow: 1;
-  width: 70vw;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -31,6 +32,7 @@ a {
   display: flex;
   justify-content: space-between;
   text-decoration: none;
+  margin-bottom: 30px;
 }
 
 .contentText {

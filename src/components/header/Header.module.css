@@ -1,8 +1,8 @@
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 70vw;
+  width: 1200px;
   height: 140px; 
   margin: 0 auto;
 }

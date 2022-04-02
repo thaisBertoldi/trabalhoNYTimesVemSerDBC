@@ -1,4 +1,4 @@
-@import url('https://www.1001fonts.com/ds-fette-kanzlei-font.html');
+@import url('http://fonts.cdnfonts.com/css/ds-fette-kanzlei');
 
 .footerContainer{
     background-color: rgba(0, 0, 0, 0.822);
@@ -11,6 +11,13 @@
     grid-template-columns: 60% 40%;
     color: rgba(255, 255, 255, 0.877);
     padding-bottom: 30px;
+}
+
+.footerMessage span{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    color: rgba(255, 255, 255, 0.877);
+    padding: 20px 0;
 }
 
 .fontTitleNY{

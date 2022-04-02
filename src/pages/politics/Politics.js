@@ -14,11 +14,20 @@ const Politics = () => {
         "/politics.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
       );
       const { results } = data;
+      sortArticles(results);
       setArticles(results);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const sortArticles = (data) => {
+    data.sort((a, b) => {
+      let da = new Date(a.published_date),
+          db = new Date(b.published_date);
+      return db - da;
+    });
+  }
 
   useEffect(() => {
     getArticlesData();
@@ -36,14 +45,13 @@ const Politics = () => {
           }}
           className="content"
         >
-          <div>
-            <h1>{el.title}</h1>
-            <small>{moment(el.published_date).format("DD/MM/YYYY")}</small>
+          <div className="contentText">
+            <h2>{el.title}</h2>
+            <small>{moment(el.published_date).startOf("day").fromNow()}</small>
             <p>{el.byline}</p>
             <p>{el.abstract}</p>
           </div>
-
-          <div>
+          <div className="contentImg">
             {el.multimedia === null ? (
               <img
                 src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
