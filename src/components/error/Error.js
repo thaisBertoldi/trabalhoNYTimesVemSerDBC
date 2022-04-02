@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import catError from "../../image/cat-loading.gif";
 
 export default function Error() {
   return (
-    <div>Error</div>
-  )
+    <>
+      <h1>Error</h1>
+      <img src={catError} alt="alt"></img>
+    </>
+  );
 }
