@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import moment from "moment";
+import './Details.css'
 import { DetailsContext } from "../../contexts/DetailsContext";
 
 const Details = () => {
@@ -7,7 +8,8 @@ const Details = () => {
 
   return (
     <div className="container">
-      <div>
+      <div className="detailsTitle">
+      <h1>{detailArticle.title}</h1>
         {detailArticle.multimedia === null ? (
           <img
             src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
@@ -19,7 +21,7 @@ const Details = () => {
         )}
       </div>
       <div>
-        <h1>{detailArticle.title}</h1>
+        
         <small>
           {moment(detailArticle.published_date).startOf("day").fromNow()}
         </small>
