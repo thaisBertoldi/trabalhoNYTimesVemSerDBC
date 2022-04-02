@@ -24,10 +24,10 @@ const World = () => {
   const sortArticles = (data) => {
     data.sort((a, b) => {
       let da = new Date(a.published_date),
-          db = new Date(b.published_date);
+        db = new Date(b.published_date);
       return db - da;
     });
-  }
+  };
 
   useEffect(() => {
     getArticlesData();
