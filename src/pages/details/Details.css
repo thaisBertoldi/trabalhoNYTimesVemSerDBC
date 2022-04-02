@@ -1,0 +1,42 @@
+.detailsTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.detailsMoreNews {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 15px;
+}
+
+.detailLink {
+  text-decoration: none;
+}
+
+.detailsP {
+    text-align: justify;
+}
+
+.detailsContent {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+
+.detailsInternContent {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+}
+
+.detailDetailsPublish {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detailsOtherNewsTitle {
+    margin: 70px 0 30px 0;
+}
