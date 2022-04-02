@@ -1,47 +1,70 @@
-import { useEffect, useState } from "react";
 import moment from "moment";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { DetailsContext } from "../../contexts/DetailsContext";
+import Loading from "../../components/loading/Loading";
 import Api from "../../Api";
 
-const Science = () => {
+const World = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { setDetailArticle } = useContext(DetailsContext);
 
-  useEffect(() => {
-    returnScienceData();
-  }, []);
-
-  const returnScienceData = async () => {
-    const { data } = await Api.get(
-      "/science.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
-    );
-    const { results } = data;
-
-    setArticles(results);
+  const getArticlesData = async () => {
+    try {
+      const { data } = await Api.get(
+        "/technology.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
+      );
+      const { results } = data;
+      setArticles(results);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  return (
-    <>
-      <h1>Science</h1>
+  useEffect(() => {
+    getArticlesData();
+  }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
+
+  return (
+    <div className="container">
+      <h1>Technology</h1>
       {articles.map((el) => (
-        <div key={el.uri}>
-          <h1>{el.title}</h1>
-          <small>{moment(el.published_date).format('DD/MM/YYYY')}</small>
-          <p>{el.byline}</p>
-          <p>{el.abstract}</p>
-          {el.multimedia === null ? (
-            <img
-              src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
-              alt="alt"
-              width="150px"
-              height="150px"
-            />
-          ) : (
-            <img src={el.multimedia[2].url} alt="" />
-          )}
-        </div>
+        <Link
+          key={el.uri}
+          to={`/details/${el.uri.split("/")[3]}`}
+          onClick={() => {
+            setDetailArticle(el);
+          }}
+          className="content"
+        >
+          <div>
+            <h1>{el.title}</h1>
+            <small>{moment(el.published_date).format("DD/MM/YYYY")}</small>
+            <p>{el.byline}</p>
+            <p>{el.abstract}</p>
+          </div>
+
+          <div>
+            {el.multimedia === null ? (
+              <img
+                src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
+                width="350px"
+                alt="alt"
+              />
+            ) : (
+              <img src={el.multimedia[1].url} width="350px" alt="" />
+            )}
+          </div>
+        </Link>
       ))}
-    </>
+    </div>
   );
 };
 
-export default Science;
+export default World;

@@ -6,12 +6,12 @@ import style from './Header.module.css';
 const Header = () => {
   return(
     <div className={style.header}>
-      <Logo />
+      <Link to='/'><Logo /></Link>
       <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/health'>Health</Link>
-        <Link to='/science'>Science</Link>
+        <Link to='/world'>World</Link>
         <Link to='/politics'>Politics</Link>
+        <Link to='/science'>Science &amp; Tech</Link>
+        <Link to='/health'>Health</Link>
       </nav>
     </div>
   );

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { DetailsContext } from "../../contexts/DetailsContext";
 import Api from "../../Api";
 
-const Home = () => {
+const World = () => {
   const [articles, setArticles] = useState([]);
   const { setDetailArticle } = useContext(DetailsContext);
 
   const getArticlesData = async () => {
     try {
       const { data } = await Api.get(
-        "/home.json?api-key=k0YgedAIFDuVd5qUgwTlLhp4Z56aTnGd"
+        "/world.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
       );
       const { results } = data;
       setArticles(results);
@@ -26,6 +26,7 @@ const Home = () => {
 
   return (
     <div className="container">
+      <h1>World</h1>
       {articles.map((el) => (
         <Link
           key={el.uri}
@@ -37,16 +38,17 @@ const Home = () => {
         >
           <div>
             <h1>{el.title}</h1>
-            {/* <small>{moment(el.published_date).format("DD/MM/YYYY")}</small> */}
-            <small>{moment(el.published_date).startOf("day").fromNow()}</small>
+            <small>{moment(el.published_date).format("DD/MM/YYYY")}</small>
             <p>{el.byline}</p>
             <p>{el.abstract}</p>
           </div>
+
           <div>
             {el.multimedia === null ? (
               <img
                 src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
-                alt=""
+                width="350px"
+                alt="alt"
               />
             ) : (
               <img src={el.multimedia[1].url} width="350px" alt="" />
@@ -58,4 +60,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default World;

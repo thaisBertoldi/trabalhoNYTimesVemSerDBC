@@ -5,9 +5,9 @@ const Details = () => {
   const { detailArticle } = useContext(DetailsContext);
 
   return (
-    <>
+    <div className="container">
       <h1>{detailArticle.title}</h1>
-    </>
+    </div>
   );
 };
 

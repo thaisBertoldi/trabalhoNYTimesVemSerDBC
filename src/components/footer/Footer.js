@@ -7,10 +7,10 @@ export default function Footer() {
       <div className={styles.footerMessage}>
         <div>
           <div>
-            <h1 className={styles.fontTitleNY}>The Nelson's & Thais's Jornal</h1>
+            <h1 className={styles.fontTitleNY}>The Nelson's &amp; Thais's Jornal</h1>
             <span>
               We believe that great journalism has the power to make each
-              reader’s life richer and more fulfilling, and all of society
+              reader's life richer and more fulfilling, and all of society
               stronger and more just.
             </span>
           </div>
@@ -18,7 +18,7 @@ export default function Footer() {
       </div>
       <div>
         <small className={styles.footerCopyright}>
-          ©{new Date().getFullYear()} The Nelson's & Thais's Jornal Company
+          ©{new Date().getFullYear()} The Nelson's &amp; Thais's Jornal Company
         </small>
       </div>
     </div>
