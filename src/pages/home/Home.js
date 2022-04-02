@@ -14,11 +14,20 @@ const Home = () => {
         "/home.json?api-key=k0YgedAIFDuVd5qUgwTlLhp4Z56aTnGd"
       );
       const { results } = data;
+      sortArticles(results);
       setArticles(results);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const sortArticles = (data) => {
+    data.sort((a, b) => {
+      let da = new Date(a.published_date),
+          db = new Date(b.published_date);
+      return db - da;
+    });
+  }
 
   useEffect(() => {
     getArticlesData();
