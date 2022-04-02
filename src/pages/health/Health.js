@@ -13,12 +13,15 @@ const Health = () => {
   }, []);
 
   const returnHealthData = async () => {
-    const { data } = await Api.get(
-      "/health.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
-    );
-    const { results } = data;
-
-    setArticles(results);
+    try {
+      const { data } = await Api.get(
+        "/health.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
+      );
+      const { results } = data;
+      setArticles(results);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

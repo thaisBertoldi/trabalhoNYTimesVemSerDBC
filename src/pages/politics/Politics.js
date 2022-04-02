@@ -9,12 +9,15 @@ const Politics = () => {
   const { setDetailArticle } = useContext(DetailsContext);
 
   const getArticlesData = async () => {
-    const { data } = await Api.get(
-      "/politics.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
-    );
-    const { results } = data;
-
-    setArticles(results);
+    try {
+      const { data } = await Api.get(
+        "/politics.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
+      );
+      const { results } = data;
+      setArticles(results);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

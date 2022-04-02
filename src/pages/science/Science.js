@@ -2,24 +2,34 @@ import moment from "moment";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { DetailsContext } from "../../contexts/DetailsContext";
+import Loading from "../../components/loading/Loading";
 import Api from "../../Api";
 
 const World = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { setDetailArticle } = useContext(DetailsContext);
 
   const getArticlesData = async () => {
-    const { data } = await Api.get(
-      "/technology.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
-    );
-    const { results } = data;
-
-    setArticles(results);
+    try {
+      const { data } = await Api.get(
+        "/technology.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
+      );
+      const { results } = data;
+      setArticles(results);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     getArticlesData();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="container">

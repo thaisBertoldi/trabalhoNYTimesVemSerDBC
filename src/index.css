@@ -22,6 +22,8 @@ a {
 
 .container {
   flex-grow: 1;
+  width: 70vw;
+  margin: 0 auto;
 }
 
 .content {

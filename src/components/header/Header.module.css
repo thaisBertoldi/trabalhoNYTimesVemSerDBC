@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* min-height: 60px; */
+  width: 70vw;
+  height: 140px; 
+  margin: 0 auto;
 }
 
 .header h1 {

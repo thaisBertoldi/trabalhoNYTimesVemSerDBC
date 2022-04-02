@@ -9,11 +9,15 @@ const Home = () => {
   const { setDetailArticle } = useContext(DetailsContext);
 
   const getArticlesData = async () => {
-    const { data } = await Api.get(
-      "/home.json?api-key=k0YgedAIFDuVd5qUgwTlLhp4Z56aTnGd"
-    );
-    const { results } = data;
-    setArticles(results);
+    try {
+      const { data } = await Api.get(
+        "/home.json?api-key=k0YgedAIFDuVd5qUgwTlLhp4Z56aTnGd"
+      );
+      const { results } = data;
+      setArticles(results);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -33,7 +37,8 @@ const Home = () => {
         >
           <div>
             <h1>{el.title}</h1>
-            <small>{moment(el.published_date).format("DD/MM/YYYY")}</small>
+            {/* <small>{moment(el.published_date).format("DD/MM/YYYY")}</small> */}
+            <small>{moment(el.published_date).startOf("day").fromNow()}</small>
             <p>{el.byline}</p>
             <p>{el.abstract}</p>
           </div>
