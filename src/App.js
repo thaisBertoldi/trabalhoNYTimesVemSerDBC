@@ -9,6 +9,7 @@ import DetailsProvider from "./contexts/DetailsContext";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import "./App.css";
+import NotFound from "./pages/notFound/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Header />
         <DetailsProvider>
           <Routes>
+            <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
             <Route path="/world" element={<World />} />
             <Route path="/politics" element={<Politics />} />
