@@ -35,14 +35,13 @@ const Home = () => {
           }}
           className="content"
         >
-          <div>
-            <h1>{el.title}</h1>
-            {/* <small>{moment(el.published_date).format("DD/MM/YYYY")}</small> */}
+          <div className="contentText">
+            <h2>{el.title}</h2>
             <small>{moment(el.published_date).startOf("day").fromNow()}</small>
             <p>{el.byline}</p>
             <p>{el.abstract}</p>
           </div>
-          <div>
+          <div className="contentImg">
             {el.multimedia === null ? (
               <img
                 src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
