@@ -39,14 +39,14 @@ const Details = () => {
           <img src={detailArticle.multimedia[0].url} width="800px" alt="" />
         )}
       </div>
-      <div>
+      <div className="detailDetailsPublish">
         <small>
           {moment(detailArticle.published_date).startOf("day").fromNow()}
         </small>
         <p>{detailArticle.byline}</p>
-        <p>{detailArticle.abstract}</p>
+        <h3>{detailArticle.abstract}</h3>
         <div className="detailsContent">
-          <div>
+          <div clasName="detailsInternContent">
             <p className="detailsP">
               As Russia pulls its forces back from areas around Ukraine's
               capital Kyiv, the BBC has seen evidence of potential war crimes on
@@ -63,7 +63,7 @@ const Details = () => {
               by a drone.
             </p>
           </div>
-          <div>
+          <div clasName="detailsInternContent">
             <p className="detailsP">
               In other places along the road, attempts had been made to cover up
               the bodies. Our correspondent says we don't know what happened to
@@ -82,31 +82,39 @@ const Details = () => {
         </div>
 
         <h4>What's happening in the east?</h4>
-        <p className="detailsP">
-          As Russia pulls its forces back from areas around Ukraine's capital
-          Kyiv, the BBC has seen evidence of potential war crimes on the
-          outskirts of the city. Our correspondent Jeremy Bowen counted 13
-          bodies on one small stretch of highway where, just hours earlier,
-          Russian forces had been in control.
-        </p>
-        <p className="detailsP">
-          Moscow has begun shifting its attention from the capital and the north
-          in general, trying instead to encircle Ukraine's forces in the east of
-          the country.
-        </p>
-        <p className="detailsP">
-          Its army is moving south, taking control of the city of Izyum and
-          bombarding a succession of towns to the east. Eventually, it hopes to
-          move further south still, to the town of Slovyansk.
-        </p>
-        <p className="detailsP">
-          But what is it that Russia wants with this region, known as the
-          Donbas? On paper at least, the aim is to "liberate" its
-          Russian-speaking majority.
-        </p>
+        <div>
+          <p className="detailsP">
+            As Russia pulls its forces back from areas around Ukraine's capital
+            Kyiv, the BBC has seen evidence of potential war crimes on the
+            outskirts of the city. Our correspondent Jeremy Bowen counted 13
+            bodies on one small stretch of highway where, just hours earlier,
+            Russian forces had been in control.
+          </p>
+        </div>
+        <div>
+          <p className="detailsP">
+            Moscow has begun shifting its attention from the capital and the
+            north in general, trying instead to encircle Ukraine's forces in the
+            east of the country.
+          </p>
+        </div>
+        <div>
+          <p className="detailsP">
+            Its army is moving south, taking control of the city of Izyum and
+            bombarding a succession of towns to the east. Eventually, it hopes
+            to move further south still, to the town of Slovyansk.
+          </p>
+        </div>
+        <div>
+          <p className="detailsP">
+            But what is it that Russia wants with this region, known as the
+            Donbas? On paper at least, the aim is to "liberate" its
+            Russian-speaking majority.
+          </p>
+        </div>
       </div>
 
-      <h3>Other News:</h3>
+      <div className="detailsOtherNewsTitle"><h3>Other News:</h3></div>
       <div className="detailsMoreNews">
         {articles.map((el) => (
           <Link
