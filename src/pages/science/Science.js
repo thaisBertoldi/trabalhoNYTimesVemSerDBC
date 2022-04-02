@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import moment from "moment";
 import Api from "../../Api";
 
 const Science = () => {
@@ -24,7 +25,7 @@ const Science = () => {
       {articles.map((el) => (
         <div key={el.uri}>
           <h1>{el.title}</h1>
-          <small>{el.published_date}</small>
+          <small>{moment(el.published_date).format('DD/MM/YYYY')}</small>
           <p>{el.byline}</p>
           <p>{el.abstract}</p>
           {el.multimedia === null ? (

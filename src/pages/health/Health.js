@@ -1,4 +1,6 @@
+import moment from "moment";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Api from "../../Api";
 
 const Health = () => {
@@ -23,24 +25,34 @@ const Health = () => {
 
       {articles.map((el) => (
         <div key={el.uri}>
-          <h1>{el.title}</h1>
-          <small>{el.published_date}</small>
-          <p>{el.byline}</p>
-          <p>{el.abstract}</p>
-          {el.multimedia === null ? (
-            <img
-              src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
-              alt="alt"
-              width="150px"
-              height="150px"
-            />
-          ) : (
-            <img src={el.multimedia[2].url} alt="" />
-          )}
+          <Link
+            to={`/health:${el.uri.split("nyt://article/").join("")}`}
+            className="container"
+          >
+            <div>
+              <h1>{el.title}</h1>
+              <small>{moment(el.published_date).format("DD/MM/YYYY")}</small>
+              <p>{el.byline}</p>
+              <p>{el.abstract}</p>
+            </div>
+
+            <div>
+              {el.multimedia === null ? (
+                <img
+                  src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
+                  alt="alt"
+                  width="150px"
+                  height="150px"
+                />
+              ) : (
+                <img src={el.multimedia[1].url} alt="" />
+              )}
+            </div>
+          </Link>
         </div>
       ))}
     </>
   );
 };
 
-export default Health;;
+export default Health;
