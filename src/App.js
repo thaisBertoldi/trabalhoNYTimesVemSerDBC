@@ -5,12 +5,15 @@ import Science from "./pages/science/Science";
 import Health from "./pages/health/Health";
 import Details from "./pages/details/Details";
 import DetailsProvider from "./contexts/DetailsContext";
+import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <Header />
+        <div className="main">
         <DetailsProvider>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -22,6 +25,7 @@ function App() {
             </Route>
           </Routes>
         </DetailsProvider>
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

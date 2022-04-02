@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import moment from 'moment';
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { DetailsContext } from "../../contexts/DetailsContext";
 import Api from "../../Api";
 
 const Home = () => {
   const [articles, setArticles] = useState([]);
+  const { setDetailArticle } = useContext(DetailsContext);
 
   const getSection = async () => {
     const { data } = await Api.get(
@@ -23,8 +25,9 @@ const Home = () => {
       {articles.map((article) => (
         <div key={article.uri} >
           <Link
-            to={`/details:${article.uri.split("nyt://article").join("")}`}
+            to={`/details${article.uri.split("nyt://article").join("")}`}
             className="container"
+            onClick={() => {setDetailArticle(article)}}
           >
             <div>
               <h1>{article.title}</h1>

@@ -24,7 +24,6 @@ const Health = () => {
   return (
     <>
       <h1>Health</h1>
-
       {articles.map((el) => (
         <div key={el.uri}>
           <Link
