@@ -5,11 +5,13 @@ import Science from "./pages/science/Science";
 import Health from "./pages/health/Health";
 import Details from "./pages/details/Details";
 import DetailsProvider from "./contexts/DetailsContext";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <Header />
         <DetailsProvider>
           <Routes>
             <Route path="/" element={<Home />} />
