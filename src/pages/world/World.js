@@ -36,38 +36,42 @@ const World = () => {
   return (
     <div className="container">
       <h1>World</h1>
-      {articles.map((el) => (
-        <Link
-          key={el.uri}
-          to={`/details/${el.uri.split("/")[3]}`}
-          onClick={() => {
-            setDetailArticle(el);
-          }}
-          className="content"
-        >
-          <div className="contentText">
-            <h2>{el.title}</h2>
-            <small>{moment(el.published_date).startOf("day").fromNow()}</small>
-            <p>{el.byline}</p>
-            <p>{el.abstract}</p>
-          </div>
+      {articles.map((el) =>
+        el.title !== "" ? (
+          <Link
+            key={el.uri}
+            to={`/details/${el.uri.split("/")[3]}`}
+            onClick={() => {
+              setDetailArticle(el);
+            }}
+            className="content"
+          >
+            <div className="contentText">
+              <h2>{el.title}</h2>
+              <small>
+                {moment(el.published_date).startOf("day").fromNow()}
+              </small>
+              <p>{el.byline}</p>
+              <p>{el.abstract}</p>
+            </div>
 
-          <div className="contentImg">
-            {el.multimedia === null ? (
-              <img
-                src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
-                width="350px"
-                alt="alt"
-              />
-            ) : (
-              <>
-                <img src={el.multimedia[1].url} width="350px" alt="" />
-                <span>{el.multimedia[1].copyright}</span>
-              </>
-            )}
-          </div>
-        </Link>
-      ))}
+            <div className="contentImg">
+              {el.multimedia === null ? (
+                <img
+                  src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
+                  width="350px"
+                  alt="alt"
+                />
+              ) : (
+                <>
+                  <img src={el.multimedia[1].url} width="350px" alt="" />
+                  <span>{el.multimedia[1].copyright}</span>
+                </>
+              )}
+            </div>
+          </Link>
+        ) : null
+      )}
     </div>
   );
 };
