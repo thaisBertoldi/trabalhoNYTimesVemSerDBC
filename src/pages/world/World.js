@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Loading from "../../components/loading/Loading";
 import Api from "../../Api";
+import Error from "../../components/error/Error";
 
 const World = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [erro, setErro] = useState(false);
   const { setDetailArticle, sortArticles } = useContext(ArticlesContext);
 
   const getArticlesData = async () => {
@@ -21,6 +23,8 @@ const World = () => {
       setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
+      setErro(true);
     }
   };
 
@@ -32,10 +36,13 @@ const World = () => {
   if (loading) {
     return <Loading />;
   }
+  if (erro) {
+    return <Error />;
+  }
 
   return (
     <div className="container">
-      <h1>World</h1>
+      <h1 className="contentTitleH1">World</h1>
       {articles.map((el) =>
         el.title !== "" && (
           <Link
