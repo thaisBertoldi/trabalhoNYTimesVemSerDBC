@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import moment from "moment";
 import "./Details.css";
-import { DetailsContext } from "../../contexts/DetailsContext";
+import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Api from "../../Api";
 import { Link } from "react-router-dom";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 
 const Details = () => {
-  const { detailArticle, setDetailArticle } = useContext(DetailsContext);
+  const { detailArticle, setDetailArticle } = useContext(ArticlesContext);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState(false);

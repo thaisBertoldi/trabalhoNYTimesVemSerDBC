@@ -5,7 +5,7 @@ import Politics from "./pages/politics/Politics";
 import Science from "./pages/science/Science";
 import Health from "./pages/health/Health";
 import Details from "./pages/details/Details";
-import DetailsProvider from "./contexts/DetailsContext";
+import ArticlesProvider from "./contexts/ArticlesContext";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import "./App.css";
@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <StickyHeader />
-        <DetailsProvider>
+        <ArticlesProvider>
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
@@ -30,7 +30,7 @@ function App() {
               <Route path=":id" element={<Details />} />
             </Route>
           </Routes>
-        </DetailsProvider>
+        </ArticlesProvider>
         <Footer />
       </BrowserRouter>
     </div>

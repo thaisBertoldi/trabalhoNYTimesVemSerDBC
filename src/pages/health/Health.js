@@ -1,18 +1,16 @@
 import moment from "moment";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { DetailsContext } from "../../contexts/DetailsContext";
+import { ArticlesContext } from "../../contexts/ArticlesContext";
+import Loading from "../../components/loading/Loading";
 import Api from "../../Api";
 
 const Health = () => {
   const [articles, setArticles] = useState([]);
-  const { setDetailArticle } = useContext(DetailsContext);
+  const [loading, setLoading] = useState(true);
+  const { setDetailArticle, sortArticles } = useContext(ArticlesContext);
 
-  useEffect(() => {
-    returnHealthData();
-  }, []);
-
-  const returnHealthData = async () => {
+  const getArticlesData = async () => {
     try {
       const { data } = await Api.get(
         "/health.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
@@ -20,18 +18,20 @@ const Health = () => {
       const { results } = data;
       sortArticles(results);
       setArticles(results);
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const sortArticles = (data) => {
-    data.sort((a, b) => {
-      let da = new Date(a.published_date),
-        db = new Date(b.published_date);
-      return db - da;
-    });
-  };
+  useEffect(() => {
+    getArticlesData();
+    // eslint-disable-next-line
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="container">

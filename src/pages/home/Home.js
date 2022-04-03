@@ -1,12 +1,12 @@
 import moment from "moment";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { DetailsContext } from "../../contexts/DetailsContext";
+import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Api from "../../Api";
 
 const Home = () => {
   const [articles, setArticles] = useState([]);
-  const { setDetailArticle } = useContext(DetailsContext);
+  const { setDetailArticle, sortArticles } = useContext(ArticlesContext);
 
   const getArticlesData = async () => {
     try {
@@ -21,16 +21,9 @@ const Home = () => {
     }
   };
 
-  const sortArticles = (data) => {
-    data.sort((a, b) => {
-      let da = new Date(a.published_date),
-          db = new Date(b.published_date);
-      return db - da;
-    });
-  }
-
   useEffect(() => {
     getArticlesData();
+    // eslint-disable-next-line
   }, []);
 
   return (

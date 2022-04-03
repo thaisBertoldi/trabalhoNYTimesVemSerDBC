@@ -1,14 +1,14 @@
 import moment from "moment";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { DetailsContext } from "../../contexts/DetailsContext";
+import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Loading from "../../components/loading/Loading";
 import Api from "../../Api";
 
 const World = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { setDetailArticle } = useContext(DetailsContext);
+  const { setDetailArticle, sortArticles } = useContext(ArticlesContext);
 
   const getArticlesData = async () => {
     try {
@@ -24,16 +24,9 @@ const World = () => {
     }
   };
 
-  const sortArticles = (data) => {
-    data.sort((a, b) => {
-      let da = new Date(a.published_date),
-          db = new Date(b.published_date);
-      return db - da;
-    });
-  }
-
   useEffect(() => {
     getArticlesData();
+    // eslint-disable-next-line
   }, []);
 
   if (loading) {
