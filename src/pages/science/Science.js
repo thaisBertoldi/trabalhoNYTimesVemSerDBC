@@ -1,15 +1,19 @@
 import moment from "moment";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 
 const Science = () => {
   const { setDetailArticle, getArticlesData, articles, loading, erro, } = useContext(ArticlesContext);
+  const createAlert = () => toast(`Ganhe até 50% de desconto ao assinar The Nelson's & Thais Times. Saiba mais`);
 
   useEffect(() => {
     getArticlesData('technology');
+    createAlert()
     // eslint-disable-next-line
   }, []);
 
@@ -58,6 +62,7 @@ const Science = () => {
           </Link>
         ) 
       )}
+      <ToastContainer />
     </div>
   );
 };

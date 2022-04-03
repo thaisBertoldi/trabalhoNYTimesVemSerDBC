@@ -1,7 +1,9 @@
 .notfound {
-    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 100px;
 }
 
 .notfoundImg {
-    width: 100%;
+    width: 50%;
 }
