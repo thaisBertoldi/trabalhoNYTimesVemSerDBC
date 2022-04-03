@@ -1,3 +1,40 @@
+@import url("http://fonts.cdnfonts.com/css/ds-fette-kanzlei");
+
 .stickyHeader {
   display: flex;
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 28%);
+}
+
+.stickyHeader a {
+  padding: 0;
+  text-decoration: none;
+}
+
+.fontTitleNY {
+  font-family: "DS Fette Kanzlei", sans-serif;
+  font-size: 1.5rem;
+}
+
+.contentStickyHeader {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.stickyHeader nav {
+  margin: 0 30px;
+}
+
+.stickyHeader nav>a {
+  margin-left: 20px;
+  padding: 5px 10gipx;
 }

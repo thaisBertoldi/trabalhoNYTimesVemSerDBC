@@ -10,13 +10,14 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import "./App.css";
 import NotFound from "./pages/notFound/NotFound";
+import StickyHeader from "./components/stickyheader/StickyHeader";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        
         <Header />
+        <StickyHeader />
         <DetailsProvider>
           <Routes>
             <Route path="*" element={<NotFound />} />
