@@ -28,9 +28,10 @@ a {
   margin: 0 auto;
 }
 
+/* css of the news card of all pages */
 .content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   text-decoration: none;
   margin-bottom: 30px;
 }
@@ -39,7 +40,26 @@ a {
   padding: 10px 30px 10px 0;
 }
 
+.contentText h2 {
+  margin-bottom: 10px;
+}
+
+.contentText small {
+  color: #db0707;
+}
+
+.contentText p {
+  margin-top: 10px;
+}
+
 .contentImg {
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.contentImg span {
+  font-size: 10px;
+  width: 350px;
+  text-align: end;
 }

@@ -60,7 +60,10 @@ const World = () => {
                 alt="alt"
               />
             ) : (
-              <img src={el.multimedia[1].url} width="350px" alt="" />
+              <>
+                <img src={el.multimedia[1].url} width="350px" alt="" />
+                <span>{el.multimedia[1].copyright}</span>
+              </>
             )}
           </div>
         </Link>
