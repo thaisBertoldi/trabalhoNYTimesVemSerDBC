@@ -8,7 +8,7 @@
 
 .footerMessage{
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 3fr 1fr;
     color: rgba(255, 255, 255, 0.877);
     padding-bottom: 30px;
 }
@@ -16,13 +16,11 @@
 .footerMessage span{
     display: grid;
     grid-template-columns: 60% 40%;
-    color: rgba(255, 255, 255, 0.877);
     padding: 20px 0;
 }
 
 .fontTitleNY{
     font-family: 'DS Fette Kanzlei', sans-serif;
-    color: rgba(255, 255, 255, 0.877);
 }
 
 .footerCopyright{
@@ -31,5 +29,5 @@
     justify-content: flex-end;
     border-top: 1px rgba(255, 255, 255, 0.301) solid;
     padding: 5px;
-    color: rgba(255, 255, 255, 0.877);
+    
 }
