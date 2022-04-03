@@ -10,12 +10,8 @@ export default function NotFound() {
         <div>
           <h2>Oh, damn, looks like this page has been torn out.</h2>
         </div>
-        <div>
-          <img
-            src={notFoundImage}
-            className="notfoundImg"
-            alt="not found page"
-          ></img>
+        <div className="notFoundImg">
+          <img src={notFoundImage} alt="not found page" />
         </div>
         <div>
           <span>Please return to</span>{" "}
