@@ -37,7 +37,7 @@ const Politics = () => {
     <div className="container">
       <h1>Politics</h1>
       {articles.map((el) =>
-        el.title !== "" ? (
+        el.title !== "" && (
           <Link
             key={el.uri}
             to={`/details/${el.uri.split("/")[3]}`}
@@ -69,7 +69,7 @@ const Politics = () => {
               )}
             </div>
           </Link>
-        ) : null
+        )
       )}
     </div>
   );

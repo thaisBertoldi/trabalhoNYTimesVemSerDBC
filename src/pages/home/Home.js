@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div className="container">
       {articles.map((el) =>
-        el.title !== "" ? (
+        el.title !== "" && (
           <Link
             key={el.uri}
             to={`/details/${el.uri.split("/")[3]}`}
@@ -60,7 +60,7 @@ const Home = () => {
               )}
             </div>
           </Link>
-        ) : null
+        )
       )}
     </div>
   );

@@ -37,7 +37,7 @@ const Health = () => {
     <div className="container">
       <h1>Health</h1>
       {articles.map((el) =>
-        el.title !== "" ? (
+        el.title !== "" && (
           <Link
             key={el.uri}
             to={`/details/${el.uri.split("/")[3]}`}
@@ -70,7 +70,7 @@ const Health = () => {
               )}
             </div>
           </Link>
-        ) : null
+        )
       )}
     </div>
   );
