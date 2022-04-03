@@ -7,7 +7,7 @@ import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 
-const Science = () => {
+const Tech = () => {
   const { setDetailArticle, getArticlesData, articles, loading, erro, } = useContext(ArticlesContext);
   const createAlert = () => toast(`Ganhe até 50% de desconto ao assinar The Nelson's & Thais's Times. Saiba mais`);
 
@@ -67,4 +67,4 @@ const Science = () => {
   );
 };
 
-export default Science;
+export default Tech;

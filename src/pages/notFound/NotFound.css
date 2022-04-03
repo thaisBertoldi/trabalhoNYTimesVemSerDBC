@@ -1,9 +1,16 @@
-.notfound {
+.notFound {
     display: grid;
-    grid-template-columns: auto;
-    gap: 100px;
+    grid-template-rows: 1fr 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+    row-gap: 50px;
 }
 
-.notfoundImg {
+.notFoundImg {
+    display: flex;
+    justify-content: center;
+}
+
+.notFoundImg img {
     width: 50%;
 }

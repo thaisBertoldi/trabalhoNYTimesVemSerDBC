@@ -8,9 +8,9 @@ const Header = () => {
   return (
     <div className={style.header}>
       <div>
-      <Link to="/">
-        <Logo />
-      </Link>
+        <Link to="/">
+          <Logo />
+        </Link>
       </div>
       <div>
         <Navbar />
