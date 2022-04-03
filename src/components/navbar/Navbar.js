@@ -8,7 +8,7 @@ const Navbar = () => {
       <nav className={styles.nav}>
         <Link to="/world">World</Link>
         <Link to="/politics">Politics</Link>
-        <Link to="/science">Science &amp; Tech</Link>
+        <Link to="/tech">Technology</Link>
         <Link to="/health">Health</Link>
       </nav>
     </>
