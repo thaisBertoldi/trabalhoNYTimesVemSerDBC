@@ -1,35 +1,15 @@
 import moment from "moment";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Loading from "../../components/loading/Loading";
-import Api from "../../Api";
 import Error from "../../components/error/Error";
 
 const World = () => {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [erro, setErro] = useState(false);
-  const { setDetailArticle, sortArticles } = useContext(ArticlesContext);
-
-  const getArticlesData = async () => {
-    try {
-      const { data } = await Api.get(
-        "/technology.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF"
-      );
-      const { results } = data;
-      sortArticles(results);
-      setArticles(results);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-      setErro(true);
-    }
-  };
+  const { setDetailArticle, getArticlesData, articles, loading, erro, } = useContext(ArticlesContext);
 
   useEffect(() => {
-    getArticlesData();
+    getArticlesData('technology');
     // eslint-disable-next-line
   }, []);
 
