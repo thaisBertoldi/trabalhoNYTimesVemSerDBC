@@ -61,7 +61,7 @@ const Details = () => {
         <p>{detailArticle.byline}</p>
         <h3>{detailArticle.abstract}</h3>
         <div className="detailsContent">
-          <div clasName="detailsInternContent">
+          <div className="detailsInternContent">
             <p className="detailsP">
               As Russia pulls its forces back from areas around Ukraine's
               capital Kyiv, the BBC has seen evidence of potential war crimes on
@@ -78,7 +78,7 @@ const Details = () => {
               by a drone.
             </p>
           </div>
-          <div clasName="detailsInternContent">
+          <div className="detailsInternContent">
             <p className="detailsP">
               In other places along the road, attempts had been made to cover up
               the bodies. Our correspondent says we don't know what happened to

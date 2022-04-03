@@ -5,7 +5,7 @@ import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 
-const World = () => {
+const Science = () => {
   const { setDetailArticle, getArticlesData, articles, loading, erro, } = useContext(ArticlesContext);
 
   useEffect(() => {
@@ -62,4 +62,4 @@ const World = () => {
   );
 };
 
-export default World;
+export default Science;
