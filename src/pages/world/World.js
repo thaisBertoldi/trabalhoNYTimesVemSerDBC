@@ -9,7 +9,7 @@ const World = () => {
   const { setDetailArticle, getArticlesData, articles, loading, erro, } = useContext(ArticlesContext);
 
   useEffect(() => {
-    getArticlesData('worl');
+    getArticlesData('world');
     // eslint-disable-next-line
   }, []);
 
