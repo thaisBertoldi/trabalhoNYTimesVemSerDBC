@@ -2,29 +2,24 @@ import moment from "moment";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArticlesContext } from "../../contexts/ArticlesContext";
-import Api from "../../Api";
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
+
 
 const Home = () => {
-  const [articles, setArticles] = useState([]);
-  const { setDetailArticle, sortArticles } = useContext(ArticlesContext);
-
-  const getArticlesData = async () => {
-    try {
-      const { data } = await Api.get(
-        "/home.json?api-key=k0YgedAIFDuVd5qUgwTlLhp4Z56aTnGd"
-      );
-      const { results } = data;
-      sortArticles(results);
-      setArticles(results);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { setDetailArticle, getArticlesData, articles, loading, erro, } = useContext(ArticlesContext);
 
   useEffect(() => {
-    getArticlesData();
+    getArticlesData('home');
     // eslint-disable-next-line
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+  if (erro) {
+    return <Error />;
+  }
 
   return (
     <div className="container">
