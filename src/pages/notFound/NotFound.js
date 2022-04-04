@@ -1,7 +1,8 @@
 import React from "react";
-import "./NotFound.css";
 import { Link } from "react-router-dom";
 import notFoundImage from "../../image/not-found-page.gif";
+
+import "./NotFound.css";
 
 export default function NotFound() {
   return (
