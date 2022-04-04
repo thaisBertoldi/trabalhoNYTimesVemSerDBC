@@ -134,7 +134,6 @@ const Details = () => {
         <h3>Other News:</h3>
       </div>
       <div className="detailsMoreNews">
-        {console.log(articles)}
         {articles.map((el) => (
           articles.indexOf(el) < 6 &&(
             <Link
