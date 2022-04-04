@@ -27,18 +27,17 @@ const InfoSection = () => {
     setLongitude(lon);
   }
   
-
   useEffect(() => {    
     navigator.geolocation.getCurrentPosition(getPosition);
     getWeather();
     // eslint-disable-next-line
-  }, []);
+  }, [getPosition]);
 
   return (
     <div className={style.containerInfoSection}>
       <div className={style.infoSection}>
         <div>{moment().format("LLLL")}</div>
-        <div>{(myWeather)} ºC</div>
+        <div>{(myWeather.toFixed(0))} ºC</div>
       </div>
     </div>
   );

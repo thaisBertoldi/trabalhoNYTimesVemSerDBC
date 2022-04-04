@@ -5,7 +5,7 @@
 .infoSection {
   display: flex;
   justify-content: space-between;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 15px;
   border-bottom: 1px solid #ebebeb;
