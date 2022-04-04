@@ -14,7 +14,7 @@ const InfoSection = () => {
       const { data } = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=78d93d422f5e37b235d733c44863b2a7`      );
       const { main } = data;
-      setMyWeather(main.temp);
+      setMyWeather(main.temp.toFixed(0));
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +37,7 @@ const InfoSection = () => {
     <div className={style.containerInfoSection}>
       <div className={style.infoSection}>
         <div>{moment().format("LLLL")}</div>
-        <div>{(myWeather.toFixed(0))} ºC</div>
+        <div>{ myWeather } ºC</div>
       </div>
     </div>
   );
