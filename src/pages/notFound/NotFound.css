@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .notFound {
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
@@ -13,4 +15,16 @@
 
 .notFoundImg img {
     width: 50%;
+}
+
+.notFoundReturn {
+    font-family: 'Roboto', sans-serif;
+}
+
+.notFoundButtonHome {
+    border-radius: 14px;
+    border: 1px gray solid;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
 }

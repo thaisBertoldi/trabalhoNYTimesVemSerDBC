@@ -13,10 +13,10 @@ export default function NotFound() {
         <div className="notFoundImg">
           <img src={notFoundImage} alt="not found page" />
         </div>
-        <div>
+        <div className="notFoundReturn">
           <span>Please return to</span>{" "}
           <Link to="/">
-            <button>Home</button>
+            <button className="notFoundButtonHome">Home</button>
           </Link>
           <span> page</span>
         </div>
