@@ -9,7 +9,7 @@ import Error from "../../components/error/Error";
 
 const Tech = () => {
   const { setDetailArticle, getArticlesData, articles, loading, erro, } = useContext(ArticlesContext);
-  const createAlert = () => toast(`Ganhe até 50% de desconto ao assinar The Nelson's & Thais Times. Saiba mais`);
+  const createAlert = () => toast(`Ganhe até 50% de desconto ao assinar The Nelson's & Thais's Times. Saiba mais`);
 
   useEffect(() => {
     getArticlesData('technology');
