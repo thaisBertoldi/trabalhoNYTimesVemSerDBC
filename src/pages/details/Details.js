@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react";
 import moment from "moment";
-import axios from "axios";
-import "./Details.css";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Api from "../../Api";
-import { Link } from "react-router-dom";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
+
+import "./Details.css";
 
 const Details = () => {
   const { detailArticle, setDetailArticle } = useContext(ArticlesContext);
@@ -135,6 +135,7 @@ const Details = () => {
       </div>
       <div className="detailsMoreNews">
         {articles.map((el) => (
+
           <Link
             key={el.uri}
             to={`/details/${el.uri.split("/")[3]}`}
