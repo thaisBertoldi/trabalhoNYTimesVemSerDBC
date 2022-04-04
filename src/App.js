@@ -12,6 +12,7 @@ import NotFound from "./pages/notFound/NotFound";
 import StickyHeader from "./components/stickyheader/StickyHeader";
 
 import "./App.css";
+import InfoSection from "./components/infosection/InfoSection";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
+        <InfoSection />
         <StickyHeader />
         <ArticlesProvider>
           <Routes>
