@@ -1,11 +1,19 @@
 import React from "react";
 import hourglassLoading from "../../image/hourglass-loading.gif";
 
+import style from "./Loading.module.css";
+
 export default function Loading() {
   return (
     <div className="container">
-      <h1>Listando</h1>
-      <img src={hourglassLoading} width="150px" alt="alt"></img>
+      <div className={style.containerLoading}>
+        <div>
+          <h1>Searching...</h1>
+        </div>
+        <div>
+          <img src={hourglassLoading} alt="alt"></img>
+        </div>
+      </div>
     </div>
   );
 }
