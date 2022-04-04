@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import moment from "moment";
+import axios from "axios";
 import "./Details.css";
 import { ArticlesContext } from "../../contexts/ArticlesContext";
 import Api from "../../Api";
@@ -12,6 +13,7 @@ const Details = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState(false);
+  const [myWeather, setMyWeather] = useState([])
 
   const getArticlesData = async () => {
     try {
@@ -28,7 +30,20 @@ const Details = () => {
     }
   };
 
+  const getWeather = async () => {
+    try {
+      const {data} = await axios.get('https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=78d93d422f5e37b235d733c44863b2a7')
+      console.log(data)
+      const {weather} = data
+      setMyWeather(weather)
+    }
+    catch(error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
+    getWeather()
     getArticlesData();
   }, []);
 
@@ -42,6 +57,10 @@ const Details = () => {
 
   return (
     <div className="container">
+      <div>
+        {myWeather.length > 0 && 
+        <h1>{myWeather.main}</h1>}
+      </div>
       <div className="detailsTitle">
         <h1>{detailArticle.title}</h1>
         {detailArticle.multimedia === null ? (
