@@ -1,11 +1,19 @@
 import React from "react";
 import catError from "../../image/cat-error.gif";
 
+import style from "./Error.module.css";
+
 export default function Error() {
   return (
     <div className="container">
-      <h1>Error</h1>
-      <img src={catError} width="800px" alt="alt"></img>
+      <div className={style.containerError}>
+        <div>
+          <h1>Ooops! We have a problem.</h1>
+        </div>
+        <div>
+          <img src={catError} alt="alt"></img>
+        </div>
+      </div>
     </div>
   );
 }
