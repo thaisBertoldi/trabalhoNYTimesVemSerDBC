@@ -40,3 +40,12 @@
 .detailsOtherNewsTitle {
     margin: 70px 0 30px 0;
 }
+
+.detailsOtherNewsText {
+  width: 150px;
+  font-size: 0.9rem;
+}
+
+.detailsOtherContentImg {
+  width: 150px;
+}

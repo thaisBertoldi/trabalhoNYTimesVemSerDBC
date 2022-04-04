@@ -134,35 +134,36 @@ const Details = () => {
         <h3>Other News:</h3>
       </div>
       <div className="detailsMoreNews">
+        {console.log(articles)}
         {articles.map((el) => (
-
-          <Link
-            key={el.uri}
-            to={`/details/${el.uri.split("/")[3]}`}
-            onClick={() => {
-              setDetailArticle(el);
-            }}
-            className="detailLink"
-          >
-            <div className="contentImg">
-              {el.multimedia === null ? (
-                <img
-                  src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
-                  alt=""
-                />
-              ) : (
-                <img src={el.multimedia[2].url} alt="" />
-              )}
-            </div>
-            <div className="detailText">
-              <div>
-                <h4>{el.title}</h4>
+          articles.indexOf(el) < 6 &&(
+            <Link
+              key={el.uri}
+              to={`/details/${el.uri.split("/")[3]}`}
+              onClick={() => {
+                setDetailArticle(el);
+              }}
+              className="detailLink"
+            >
+              <div className="detailsOtherContentImg">
+                {el.multimedia === null ? (
+                  <img
+                    src="https://cna.com.br/Content/uploads/blogposts/os-melhores-sites-de-noticias-em-ingles-para-estudar.jpg"
+                    alt=""
+                  />
+                ) : (
+                  <img src={el.multimedia[2].url} alt="" />
+                )}
               </div>
-              <small>
-                {moment(el.published_date).startOf("day").fromNow()}
-              </small>
-            </div>
-          </Link>
+              <div className="detailsOtherNewsText">
+                <div>
+                  <h4>{el.title}</h4>
+                </div>
+                <small>
+                  {moment(el.published_date).startOf("day").fromNow()}
+                </small>
+              </div>
+            </Link>)
         ))}
       </div>
     </div>
