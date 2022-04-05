@@ -14,6 +14,9 @@ import StickyHeader from "./components/stickyheader/StickyHeader";
 
 import "./App.css";
 
+console.log(process.env.REACT_APP_API_OPEN_WEATHER)
+console.log(process.env.REACT_APP_API_NYT)
+
 function App() {
   return (
     <div className="App">
