@@ -12,7 +12,7 @@ const ArticlesProvider = ({ children }) => {
   const getArticlesData = async (section) => {
     try {
       const { data } = await Api.get(
-        `/${section}.json?api-key=BkGZkAsENjFiJ9qka1Gy6GOHAmuRIxGF`
+        `/${section}.json?api-key=${process.env.REACT_APP_API_OPEN_WEATHER}`
       );
       const { results } = data;
       sortArticles(results);

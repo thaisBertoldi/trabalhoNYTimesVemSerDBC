@@ -8,12 +8,11 @@ import Details from "./pages/details/Details";
 import ArticlesProvider from "./contexts/ArticlesContext";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import InfoSection from "./components/infosection/InfoSection";
 import NotFound from "./pages/notFound/NotFound";
 import StickyHeader from "./components/stickyheader/StickyHeader";
 
 import "./App.css";
-import InfoSection from "./components/infosection/InfoSection";
-
 
 function App() {
   return (
